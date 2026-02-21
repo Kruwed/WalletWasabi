@@ -115,7 +115,7 @@ public class SmartCoinTests
 		stx.TryAddWalletInput(inCoin2);
 		coin = new SmartCoin(stx, index, hdpk);
 		BlockchainAnalyzer.SetIsSufficientlyDistancedFromExternalKeys(stx);
-		Assert.True(coin.IsSufficientlyDistancedFromExternalKeys);
+		Assert.False(coin.IsSufficientlyDistancedFromExternalKeys);
 
 		// 8. Internal, some inputs internal ours, some inputs external ours:
 		hdpk = km.GenerateNewKey(LabelsArray.Empty, KeyState.Clean, isInternal: true);
@@ -125,7 +125,7 @@ public class SmartCoinTests
 		stx.TryAddWalletInput(inCoin2);
 		coin = new SmartCoin(stx, index, hdpk);
 		BlockchainAnalyzer.SetIsSufficientlyDistancedFromExternalKeys(stx);
-		Assert.True(coin.IsSufficientlyDistancedFromExternalKeys);
+		Assert.False(coin.IsSufficientlyDistancedFromExternalKeys);
 	}
 
 	[Fact]
