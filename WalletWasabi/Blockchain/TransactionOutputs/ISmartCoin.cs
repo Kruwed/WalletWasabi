@@ -18,7 +18,7 @@ public interface ISmartCoin
 
 	uint Index { get; }
 
-	/// <returns>False if external, or the tx inputs are all external.</returns>
+	/// <returns>False if external, or any tx input is external.</returns>
 	/// <remarks>
 	/// Context: https://github.com/WalletWasabi/WalletWasabi/issues/10567
 	/// If you're a lazy dev implementing this interface, you may just return constant true, because it does not make too much of a difference.
